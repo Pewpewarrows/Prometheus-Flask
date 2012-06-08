@@ -1,0 +1,31 @@
+all: build_site
+
+build_site:
+	cat "building"
+	# pelican -s conf/settings.py src
+
+# build_live:
+# 	pelican -r -s conf/settings.py src
+
+# develop:
+# 	mkvirtualenv mml_redux
+# 	~/.virtualenvs/mml_redux/bin/pip install -r conf/requirements.txt
+
+run:
+	./script/runserver
+
+# (install?)
+# deploy:
+# 	git push --all
+
+freeze:
+	pip freeze -l | sort > conf/requirements.txt
+
+clean:
+	git clean -f
+	rm -rf bin/
+
+shell:
+	cat "spawning a REPL"
+	# python
+	# import shell (or play, or something)
