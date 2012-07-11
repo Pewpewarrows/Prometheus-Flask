@@ -9,4 +9,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + os.sep + os.pard
 from promflask import create_app
 
 app = create_app(__name__)
+
+if app.config['DEBUG']:
+    app.debug = True
+
 app.run(**app.config['WERKZEUG_OPTS'])

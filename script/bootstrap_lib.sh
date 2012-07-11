@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-# Avoid double includsion
+# Avoid double inclusion
 if [[ "${BashInclude__imported+defined}" == "defined" ]]; then
     return 0
 fi
@@ -22,7 +22,7 @@ esac
 # Those are program files that depend on the version of ruby/python that comes
 # with your OS. Upgrading the system-default interpreter will introduce
 # backwards-incompatibilities that can and will bring those programs to a halt.
-# Instead, use tools like rvm, rbenv, or pythonbrew to manage user / project
+# Instead, use tools like rvm, rbenv, and pythonbrew to manage user / project
 # installations of those languages.
 
 function Bootstrap__silent_cmd {
@@ -84,10 +84,26 @@ function Bootstrap__pythonbrew_available {
 # Rbenv
 # Node.js
 # NPM stuff
+# Java
+# Maven
+# Scala
+# Clojure
+# PHP
+# Some PHP virtualenv solution
+# Lisp/Scheme/Lua/Smalltalk?
+# C/C++/C#/Obj-C
+# .NET/Mono
 
 # Sqlite
 # Postgres
 # Mysql
+# MongoDB
+# Memcached
+# Redis
+# Riak
+# Varnish
+# Nginx/Apache
 
 # Git/Hg hooks
 # Tmux/tmuxinator stuff?
+# Vagrant?
