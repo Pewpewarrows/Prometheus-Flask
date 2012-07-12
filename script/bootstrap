@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 
-source ./bootstrap_lib.sh
+curdir=`pwd`
+source ${curdir}/script/bootstrap_lib.sh
 
 function Main__usage {
     printf "
@@ -33,10 +34,16 @@ function Main__parse_args {
 }
 
 function Main__main {
-    Main__parse_args "$@"
+    # Main__parse_args "$@"
 
-    Bootstrap__python_available
-    echo "$?"
+    # Bootstrap__python_available
+    # echo "$?"
+
+    # Bootstrap__pythonbrew_available
+
+    # Bootstrap__check_for_progs "python pythonbrew ruby"
+
+    pip install -r ${curdir}/conf/requirements/develop.txt --no-index -f file://${curdir}/lib/python/
 }
 
 Main__main "$@"

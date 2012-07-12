@@ -4,9 +4,6 @@ build_site:
 	cat "building"
 	# pelican -s conf/settings.py src
 
-# build_live:
-# 	pelican -r -s conf/settings.py src
-
 develop:
 	./script/bootstrap
 # 	mkvirtualenv mml_redux
