@@ -6,6 +6,8 @@ import sys
 # HACK: Ugly way to run this script from a subdirectory, but it works
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + os.sep + os.pardir)
 
+os.environ['PROMFLASK_CONFIG'] = 'promflask.config.DevelopConfig'
+
 from promflask import create_app
 
 app = create_app(__name__)
@@ -13,4 +15,4 @@ app = create_app(__name__)
 if app.config['DEBUG']:
     app.debug = True
 
-app.run(**app.config['WERKZEUG_OPTS'])
+app.run(**app.config.get('WERKZEUG_OPTS', {}))
