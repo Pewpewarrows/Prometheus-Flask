@@ -25,12 +25,24 @@ TAGS
 *.sublime-workspace
 
 # Build
+build
 bin
 res/static/gen
+eggs
+dist
+sdist
+develop-eggs
+.installed.cfg
+lib
+lib64
+*.egg
 
 # Language
 
+# C extensions
+*.so
+
 # Python
-*.pyc
+*.py[cod]
 
 # Project
