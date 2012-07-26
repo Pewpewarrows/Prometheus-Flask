@@ -43,6 +43,13 @@ function Main__main {
 
     # Bootstrap__check_for_progs "python pythonbrew ruby"
 
+    local is_venv=`python -c "import sys; print hasattr(sys, 'real_prefix')"`
+
+    if [[ "${is_venv}" == "False" ]]; then
+        echo "Please run: 'pybrew venv use promflask'"
+        return 1
+    fi
+
     pip install -r ${curdir}/conf/requirements/develop.txt --no-index -f file://${curdir}/lib/python/
 }
 

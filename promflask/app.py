@@ -15,7 +15,7 @@ def create_app(name=__name__):
     setup_logging(app)
     load_apps(app)
 
-    if app.config['DEBUG']:
+    if app.config.get('DEBUG', False):
         app.debug = True
 
     return app
@@ -49,7 +49,7 @@ def setup_logging(app):
     logging.basicConfig(
         level=logging.DEBUG,
         format='[%(asctime)s] [%(name)s] [%(levelname)s] %(message)s',
-        datefmt='%Y%m%d-%H:%M%p',
+        datefmt='%Y-%m-%d %H:%M:%S',
     )
 
     # log = logging.getLogger(__name__)

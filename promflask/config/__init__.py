@@ -21,4 +21,5 @@ class DevelopConfig(BaseConfig):
 
     WERKZEUG_OPTS = {
         'debug': True,
+        # 'ssl_context': 'adhoc',
     }
